@@ -7,7 +7,7 @@ class detail_form(forms.ModelForm):
     class Meta:
         model = user_details
         fields = '__all__'
-        # exclude = ['user']
+        exclude = ['user']
         widgets = {
             'choice': forms.Select(attrs=({'class': 'form-control '})),
             'image': forms.FileInput(attrs=({'class': 'form-control'})),
