@@ -9,7 +9,7 @@ class detail_form(forms.ModelForm):
         fields = '__all__'
         exclude = ['user']
         widgets = {
-            'choice': forms.Select(attrs=({'class': 'form-control '})),
+            'choice': forms.Select(attrs=({'class': 'form-select '})),
             'image': forms.FileInput(attrs=({'class': 'form-control'})),
             'address': forms.Textarea(attrs=({'class': 'form-control'})),
         }
