@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}HOme{% endblock title %}
+
+{% block contactactive %}active {% endblock contactactive %}
+{% block body %}
+  <div class="container">
+      <form action="" method="post">
+          {% csrf_token %}
+    {{form.as_p}}
+          <input type="submit" class="btn btn-primary mb-5" value="Login">
+          <a class="btn btn-success mb-5" href="{% url 'singup' %}">Singup</a>
+      </form>
+</div>
+{% endblock body %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}HOme{% endblock title %}
+
+{% block contactactive %}active {% endblock contactactive %}
+{% block body %}
+<div class="container">
+      <div class="card m-3">
+                <img src="{{post.image.url}}" class="card-img-top" alt="...">
+
+                <div class="card-body">
+                    <h6 class="card-title">Uploaded By...{{post.user}}</h6>
+                    <h5 class="card-title"><h5>Title:-</h5>{{post.title}}</h5>
+
+                    <p class="card-text"><h4>Summary:-</h4>{{post.summary}}</p>
+                    <p class="card-text"><h4>Content:-</h4>{{post.content}}</p>
+
+                </div>
+      </div>
+
+</div>
+{% endblock body %}

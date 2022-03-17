@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}HOme{% endblock title %}
+
+{% block contactactive %}active {% endblock contactactive %}
+{% block body %}
+<div class="container">
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+  {{fm.as_p}}
+        <input type="submit" class="btn btn-primary mb-5" value="Post Save">
+        <a class="btn btn-danger mb-5" href="{% url 'home' %}">Cancle</a>
+    </form>
+</div>
+
+{% endblock body %}

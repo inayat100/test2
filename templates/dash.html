@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}HOme{% endblock title %}
+
+{% block contactactive %}active {% endblock contactactive %}
+{% block body %}
+  <div class="container">
+<div class="card mb-3 m-auto my-auto" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{detail.image.url }}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{user.username}}&nbsp;&nbsp;({{detail.User_Type}})</h5>
+          <h7 class="card-text">Email: <b>{{user.email}}</b></h7>
+          <h6 class="card-text">Full Name : &nbsp;{{user.first_name}}&nbsp;{{user.last_name}}</h6>
+          <h7 class="card-text">Addresss: {{detail.address}}</h7>
+
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+      {% endblock body %}

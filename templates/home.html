@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}HOme{% endblock title %}
+
+{% block contactactive %}active {% endblock contactactive %}
+
+{% block body %}
+    <div class="col-6 m-auto">
+            {% for d in data %}
+            <div class="card m-3">
+                <img src="{{d.image.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{d.title}}</h5>
+                    <p class="card-text">{{d.summary|truncatewords:15}}</p>
+                    <a href="{% url 'full_post' d.id%}" class="card-link">Read more</a>
+                </div>
+            </div>
+                {% endfor %}
+           </div>
+
+    {% endblock body %}

@@ -1,0 +1,1 @@
+web: gunicorn banao.wsgi --log-file -
