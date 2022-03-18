@@ -7,13 +7,14 @@
 
 {% block body %}
     <div class="col-6 m-auto">
-        
+        {% if cat %}
              <ul class="list-group">
               <a href="{% url 'home' %}" class="list-group-item">All</a>
         {% for c in cat %}
   <a href="{% url 'category' c.id %}" class="list-group-item">{{c.cty}}</a>
         {% endfor %}
             </ul>
+        {% endif %}
             {% for d in data %}
             <div class="card m-3">
                 <img src="{{d.image.url}}" class="card-img-top" alt="...">
