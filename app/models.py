@@ -21,7 +21,7 @@ class Category(models.Model):
 class Post(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
-    image  = models.ImageField(upload_to='post/',blank=True)
+    image  = models.ImageField(upload_to='post/',blank=False)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
     summary = models.CharField(max_length=100)
     content = models.TextField(max_length=1000)
