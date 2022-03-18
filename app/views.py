@@ -7,10 +7,16 @@ from django.contrib import messages
 # Create your views here.
 
 
-def home(request):
+def home(request,pk=None):
     if request.user.is_authenticated:
-        dd = Post.objects.filter(Publish=True)
-        return render(request,'home.html',{'data':dd})
+        if pk:
+            dd = Post.objects.filter(category=pk)
+            cat = Category.objects.all()
+            return render(request, 'home.html', {'data': dd, 'cat': cat})
+        else:
+            dd = Post.objects.filter(Publish=True)
+            cat = Category.objects.all()
+            return render(request,'home.html',{'data':dd,'cat':cat})
     return redirect('singin')
 
 def singup(request):
